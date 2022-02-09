@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors Game
+# Random Quote Machine
 
 This is the first of the Front End Development Libraries Projects in Free Code Camp and the objective was to build a Random Quote Machine that meets Free Code Camp's user stories.
 
