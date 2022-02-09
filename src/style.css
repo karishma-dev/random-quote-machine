@@ -1,0 +1,186 @@
+/* Root Selector containing colors */
+:root {
+  --left: lightgreen;
+  --right: green;
+}
+
+/* Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+html,
+body {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 0px;
+}
+body {
+  background: rgb(231, 208, 218);
+  background: radial-gradient(
+    circle,
+    rgba(231, 208, 218, 1) 0%,
+    rgba(231, 155, 171, 1) 100%
+  );
+}
+
+/* Quote-box */
+#root,
+.border,
+.outer {
+  width: fit-content;
+  height: fit-content;
+}
+#root {
+  background-color: black;
+  margin: auto;
+  position: relative;
+}
+
+/* Border */
+.border {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to left, var(--left), var(--right));
+  border-image-slice: 1;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 54px 55px,
+    rgba(0, 0, 0, 0.3) 0px -18px 30px, rgba(0, 0, 0, 0.3) 0px 4px 6px,
+    rgba(0, 0, 0, 0.35) 0px 12px 13px, rgba(0, 0, 0, 0.15) 0px -3px 5px;
+  /* padding: 10px 0px; */
+}
+.outer {
+  margin: 35px 35px;
+  padding: 30px 0px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to left, var(--right), var(--left));
+  border-image-slice: 1;
+}
+
+/* Quote */
+#text {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
+  width: 50vw;
+  padding: 10px 15px;
+}
+
+/* Author */
+#author {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+}
+
+/* Quotation mark icons */
+.fa-quote-left,
+.fa-quote-right {
+  position: absolute;
+  font-size: 27px;
+  font-weight: bolder;
+  background-color: black;
+}
+.fa-quote-left {
+  top: 40px;
+  left: 35px;
+  color: var(--left);
+  padding: 0px 10px 10px 0px;
+}
+.fa-quote-right {
+  color: var(--right);
+  padding: 10px 0px 0px 10px;
+  right: 35px;
+  bottom: 35px;
+}
+
+/* Tweet quote link */
+#tweet-quote {
+  position: absolute;
+  bottom: 5px;
+  left: 40px;
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+}
+.fa-twitter-square {
+  color: var(--left);
+  font-size: 30px;
+}
+
+/* New Quote Button */
+#new-quote {
+  position: absolute;
+  top: 47%;
+  right: 10px;
+  border: 0px;
+  border-radius: 2px;
+  padding: 3px;
+  background: linear-gradient(to bottom left, var(--left), var(--right));
+  cursor: pointer;
+}
+.fa-step-forward {
+  font-size: 18px;
+  color: black;
+}
+button span {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  position: absolute;
+}
+
+/* Footer */
+footer {
+  padding: 10px;
+  background-color: #f5dfef;
+  align-self: flex-end;
+  text-align: center;
+}
+
+/* Medi Queries */
+@media (min-width: 590px) {
+  .border {
+    border: 8px solid transparent;
+    border-image: linear-gradient(to left, var(--left), var(--right));
+    border-image-slice: 1;
+  }
+  .outer {
+    border: 4px solid transparent;
+    border-image: linear-gradient(to left, var(--right), var(--left));
+    border-image-slice: 1;
+    margin: 55px;
+    padding: 50px;
+  }
+  #text {
+    width: 25vw;
+    padding: 0px;
+    font-size: 2rem;
+  }
+  .fa-quote-left,
+  .fa-quote-right {
+    font-size: 45px;
+  }
+  .fa-quote-left {
+    left: 60px;
+    top: 50px;
+  }
+  .fa-quote-right {
+    bottom: 60px;
+    right: 60px;
+  }
+  #tweet-quote {
+    bottom: 15px;
+    left: 60px;
+  }
+  .fa-twitter-square {
+    font-size: 2.3rem;
+  }
+  #new-quote {
+    right: 75px;
+    padding: 4px;
+  }
+  .fa-step-forward{
+    font-size: 25px;
+  }
+}
